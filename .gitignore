@@ -1,0 +1,46 @@
+# —— macOS / Windows 系统临时文件 ——
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# —— 编辑器和 IDE ——
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# —— Node.js 前端 ——
+node_modules/
+dist/
+build/
+.vite/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# —— Python ——
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# —— 环境变量与密钥 ——
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# —— 日志 ——
+*.log
+
+# —— 项目本地数据（按需保留或调整） ——
+data/
+*.sqlite3
+*.db
+
+# —— 构建与缓存 ——
+.cache/
+coverage/
