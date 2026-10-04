@@ -4,7 +4,7 @@
 
 ## 当前阶段与状态
 
-阶段 4：推荐 UI —— 已完成。下一阶段：阶段 5 收尾。
+**第一版六阶段（0–5）全部完成。** 主流程可用：打开 → 填一次资料（本地保存）→ 自选菜数 → 得到符合三高限制的一餐组合 + 换一换。
 
 ## 已完成
 
@@ -15,14 +15,20 @@
 - 阶段 2 个人资料：`UserProfile` 类型、表单 UI、资料校验、localStorage 存取
 - 阶段 3 规则引擎：`Meal`/`MealCounts`、默认阈值 + 用户指标优先、忌口硬过滤、一餐组装（半荤归荤）、硬指标整餐/脂肪逐菜判定
 - 阶段 4 推荐 UI：自选菜数控件 + 一餐组合展示 + 逐菜营养 + 整餐硬指标 + 推荐原因 + 换一换
+- 阶段 5 收尾：文档校正、README 部署说明、最终校验
 
-## 未完成
+## 未完成（可选后续）
 
-- 阶段 5 收尾（lint/构建/测试复查、文档校正、部署、提交推送）
+- 硬指标默认阈值复核定稿（尤其钠 1500mg 偏宽松）
+- 食材营养数值与原书核对
+- eslint 建立（typescript-eslint 尚不支持 TS 7.0.2）
+- 真机浏览器手动点验 + 部署上线
 
-## 下一步（1 个有界任务）
+## 下一步（1–3 个有界任务）
 
-1. 阶段 5 收尾：补 lint 脚本（eslint）或说明未建立；文档与代码一致性校正；部署说明（静态站）；最终提交推送。
+1. 产品负责人复核默认阈值（`src/domain/limits.ts`）与营养数据
+2. 真机 `npm run dev` 点验；部署 `dist/` 到静态托管
+3. （可选）TS 7 兼容的 lint 方案
 
 ## 必读
 
@@ -33,12 +39,12 @@
 
 ## 重要文件
 
-- `AGENTS.md`
+- `AGENTS.md`、`README.md`
 - `docs/product/PRODUCT_REQUIREMENTS.md`
 - `docs/construction/ARCHITECTURE.md`、`CONSTRUCTION_PLAN.md`
-- `src/domain/types.ts`、`limits.ts`、`rules.ts`（规则引擎）
-- `src/domain/profile.ts`、`src/storage/profile.ts`
-- `src/data/loadDishes.ts`
+- `src/domain/types.ts`、`limits.ts`、`rules.ts`、`profile.ts`、`nutrition.ts`
+- `src/storage/profile.ts`
+- `src/data/loadDishes.ts`、`src/data/dishes.json`、`src/data/ingredients.json`
 - `src/ui/ProfileForm.tsx`、`src/ui/Recommendation.tsx`、`src/App.tsx`
 
 ## 测试基线
@@ -48,20 +54,21 @@
 - `npm run check:profile` ✅ 通过
 - `npm test`（vitest）✅ 通过（14 用例：引擎 11 + 组件 3）
 - `git diff --check` ✅ 干净
+- lint：未建立（typescript-eslint 与 TS 7.0.2 不兼容）
 
 ## 分支与提交
 
 - 开发分支：`feat/food-planner`
 - 基线提交：`1a5e9c5`
-- 备份分支：`backup/food-planner-phase0/1/2/3/4-20261005`（均已推送 origin）
-- 最新提交：`e23186e`（阶段 4 完成）
+- 备份分支：`backup/food-planner-phase0/1/2/3/4/5-20261005`（均已推送 origin）
+- 最新提交：`3859e03`（阶段 5 完成）
 
 ## 工作区状态
 
-干净（阶段 4 已提交，待推送）。
+干净（阶段 5 已提交，待推送）。
 
 ## 风险
 
 - 食材营养数值为手工参考值，正式使用前需与原书核对。
-- 硬指标默认阈值（碳水90g/钠1500mg/胆固醇200mg 单餐）为 Phase 3 占位参考值，Phase 5 需与产品负责人复核定稿（尤其钠值偏宽松）。
-- 浏览器端「刷新后资料仍在」与推荐交互尚未在真实浏览器手动点验（已由 jsdom 组件测试覆盖逻辑，非真机）。
+- 默认阈值为参考值，需产品负责人复核定稿。
+- 浏览器端交互未经真机手动点验（逻辑已由 jsdom 组件测试覆盖）。
