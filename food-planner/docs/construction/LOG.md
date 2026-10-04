@@ -14,3 +14,4 @@
 - 仓库检查：feat/food-planner 与 main 同在基线 `1a5e9c5`；food-planner/ 此前未提交。
 - 建立远程回滚点：`backup/food-planner-phase0-20261005`（已推送 origin）。
 - 待处理隐患：`.gitignore` 的 `data/` 规则会匹配 `src/data/`，阶段 1 数据层落地时需处理（改名或加否定规则）。
+- 阶段 0 完成：Vite + React + TS 脚手架；`npm run build` 通过；dev 服务器冒烟测试通过（页面标题「稳稳吃」返回正常）。
