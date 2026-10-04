@@ -1,0 +1,39 @@
+[
+  { "id": "zhushi-1", "name": "米饭", "category": "主食", "ingredients": [{ "name": "米饭(熟)", "grams": 150 }], "allergens": [] },
+  { "id": "zhushi-2", "name": "杂粮饭", "category": "主食", "ingredients": [{ "name": "大米(生)", "grams": 60 }, { "name": "小米(生)", "grams": 20 }], "allergens": [], "note": "生米合计80g蒸熟" },
+  { "id": "zhushi-3", "name": "馒头", "category": "主食", "ingredients": [{ "name": "馒头(熟)", "grams": 100 }], "allergens": [] },
+  { "id": "zhushi-4", "name": "清汤面", "category": "主食", "ingredients": [{ "name": "挂面(干)", "grams": 80 }, { "name": "油菜", "grams": 50 }, { "name": "食用油", "grams": 5 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "zhushi-5", "name": "煮玉米", "category": "主食", "ingredients": [{ "name": "玉米(鲜)", "grams": 200 }], "allergens": [] },
+
+  { "id": "hun-1", "name": "清蒸鲈鱼", "category": "荤", "ingredients": [{ "name": "鲈鱼", "grams": 200 }, { "name": "食用油", "grams": 5 }, { "name": "盐", "grams": 1 }, { "name": "酱油", "grams": 5 }], "allergens": ["鱼"] },
+  { "id": "hun-2", "name": "白灼虾", "category": "荤", "ingredients": [{ "name": "虾仁", "grams": 150 }, { "name": "盐", "grams": 1 }, { "name": "酱油", "grams": 3 }], "allergens": ["虾"] },
+  { "id": "hun-3", "name": "清炖鸡", "category": "荤", "ingredients": [{ "name": "鸡腿肉(去皮)", "grams": 150 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "hun-4", "name": "酱牛肉", "category": "荤", "ingredients": [{ "name": "牛里脊", "grams": 120 }, { "name": "酱油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "hun-5", "name": "蒸鸡蛋羹", "category": "荤", "ingredients": [{ "name": "鸡蛋(整)", "grams": 100 }, { "name": "盐", "grams": 1 }, { "name": "食用油", "grams": 3 }], "allergens": ["鸡蛋"] },
+  { "id": "hun-6", "name": "清蒸草鱼", "category": "荤", "ingredients": [{ "name": "草鱼", "grams": 200 }, { "name": "食用油", "grams": 5 }, { "name": "盐", "grams": 1 }, { "name": "酱油", "grams": 5 }], "allergens": ["鱼"] },
+
+  { "id": "banhun-1", "name": "番茄炒蛋", "category": "半荤", "ingredients": [{ "name": "鸡蛋(整)", "grams": 100 }, { "name": "番茄", "grams": 150 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": ["鸡蛋"] },
+  { "id": "banhun-2", "name": "青椒肉丝", "category": "半荤", "ingredients": [{ "name": "猪里脊", "grams": 80 }, { "name": "青椒", "grams": 100 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }, { "name": "酱油", "grams": 3 }], "allergens": [] },
+  { "id": "banhun-3", "name": "芹菜炒牛肉", "category": "半荤", "ingredients": [{ "name": "牛里脊", "grams": 80 }, { "name": "芹菜", "grams": 120 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "banhun-4", "name": "韭菜炒鸡蛋", "category": "半荤", "ingredients": [{ "name": "鸡蛋(整)", "grams": 100 }, { "name": "韭菜", "grams": 100 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": ["鸡蛋"] },
+  { "id": "banhun-5", "name": "虾仁豆腐", "category": "半荤", "ingredients": [{ "name": "虾仁", "grams": 80 }, { "name": "南豆腐", "grams": 200 }, { "name": "食用油", "grams": 5 }, { "name": "盐", "grams": 1 }], "allergens": ["虾", "大豆"] },
+  { "id": "banhun-6", "name": "木须肉", "category": "半荤", "ingredients": [{ "name": "猪里脊", "grams": 60 }, { "name": "鸡蛋(整)", "grams": 50 }, { "name": "黄瓜", "grams": 80 }, { "name": "木耳(水发)", "grams": 50 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": ["鸡蛋"] },
+
+  { "id": "su-1", "name": "清炒西兰花", "category": "素", "ingredients": [{ "name": "西兰花", "grams": 200 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "su-2", "name": "蒜蓉菠菜", "category": "素", "ingredients": [{ "name": "菠菜", "grams": 200 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "su-3", "name": "醋溜白菜", "category": "素", "ingredients": [{ "name": "白菜", "grams": 200 }, { "name": "食用油", "grams": 6 }, { "name": "盐", "grams": 1 }, { "name": "白糖", "grams": 3 }], "allergens": [] },
+  { "id": "su-4", "name": "凉拌黄瓜", "category": "素", "ingredients": [{ "name": "黄瓜", "grams": 200 }, { "name": "盐", "grams": 1 }, { "name": "酱油", "grams": 3 }, { "name": "食用油", "grams": 3 }], "allergens": [] },
+  { "id": "su-5", "name": "清炒荷兰豆", "category": "素", "ingredients": [{ "name": "荷兰豆", "grams": 150 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "su-6", "name": "香菇油菜", "category": "素", "ingredients": [{ "name": "油菜", "grams": 150 }, { "name": "香菇(鲜)", "grams": 80 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "su-7", "name": "蒜蓉空心菜", "category": "素", "ingredients": [{ "name": "空心菜", "grams": 200 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "su-8", "name": "凉拌木耳", "category": "素", "ingredients": [{ "name": "木耳(水发)", "grams": 150 }, { "name": "食用油", "grams": 5 }, { "name": "盐", "grams": 1 }, { "name": "酱油", "grams": 3 }], "allergens": [] },
+  { "id": "su-9", "name": "素炒土豆丝", "category": "素", "ingredients": [{ "name": "土豆", "grams": 200 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "su-10", "name": "番茄炒菜花", "category": "素", "ingredients": [{ "name": "番茄", "grams": 100 }, { "name": "菜花", "grams": 150 }, { "name": "食用油", "grams": 8 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+
+  { "id": "tang-1", "name": "紫菜蛋花汤", "category": "汤", "ingredients": [{ "name": "鸡蛋(整)", "grams": 50 }, { "name": "紫菜(干)", "grams": 5 }, { "name": "盐", "grams": 1 }, { "name": "食用油", "grams": 2 }], "allergens": ["鸡蛋"] },
+  { "id": "tang-2", "name": "冬瓜汤", "category": "汤", "ingredients": [{ "name": "冬瓜", "grams": 200 }, { "name": "食用油", "grams": 3 }, { "name": "盐", "grams": 1 }], "allergens": [] },
+  { "id": "tang-3", "name": "番茄鸡蛋汤", "category": "汤", "ingredients": [{ "name": "番茄", "grams": 150 }, { "name": "鸡蛋(整)", "grams": 50 }, { "name": "食用油", "grams": 3 }, { "name": "盐", "grams": 1 }], "allergens": ["鸡蛋"] },
+  { "id": "tang-4", "name": "青菜豆腐汤", "category": "汤", "ingredients": [{ "name": "油菜", "grams": 100 }, { "name": "南豆腐", "grams": 150 }, { "name": "盐", "grams": 1 }, { "name": "食用油", "grams": 2 }], "allergens": ["大豆"] },
+  { "id": "tang-5", "name": "白菜豆腐汤", "category": "汤", "ingredients": [{ "name": "白菜", "grams": 150 }, { "name": "北豆腐", "grams": 100 }, { "name": "盐", "grams": 1 }, { "name": "食用油", "grams": 2 }], "allergens": ["大豆"] },
+  { "id": "tang-6", "name": "萝卜丝汤", "category": "汤", "ingredients": [{ "name": "白萝卜", "grams": 200 }, { "name": "食用油", "grams": 3 }, { "name": "盐", "grams": 1 }], "allergens": [] }
+]

@@ -49,10 +49,10 @@ food-planner/
 
   // 三高指标（可选；留空则用默认指南阈值）
   limits?: {
-    sodiumMgPerMeal?: number;      // 单餐钠上限
-    sugarGPerMeal?: number;        // 单餐糖上限
-    saturatedFatGPerMeal?: number; // 单餐饱和脂肪上限
-    cholesterolMgPerMeal?: number; // 单餐胆固醇上限
+    carbsGPerMeal?: number;        // 单餐碳水上限（血糖）
+    sodiumMgPerMeal?: number;      // 单餐钠上限（血压）
+    cholesterolMgPerMeal?: number; // 单餐胆固醇上限（血脂）
+    fatGPerDish?: number;          // 单菜总脂肪阈值（血脂，逐菜）
   };
 
   // 忌口 / 禁忌（硬过滤）
@@ -69,12 +69,10 @@ food-planner/
   category: '荤' | '半荤' | '素' | '汤' | '主食';
   perServing: {
     caloriesKcal: number;
-    carbsG: number;
-    sugarG: number;
-    sodiumMg: number;
-    fatG: number;
-    saturatedFatG: number;
-    cholesterolMg: number;
+    carbsG: number;        // 碳水化合物（硬指标·血糖）
+    sodiumMg: number;      // 钠（硬指标·血压）
+    fatG: number;          // 脂肪（其他·血脂）
+    cholesterolMg: number; // 胆固醇（硬指标·血脂）
   };
   ingredients: { name: string; grams: number }[];
   allergens: string[];     // 过敏原/忌口关键字，用于硬过滤
@@ -88,9 +86,9 @@ food-planner/
 {
   dishes: Dish[];      // 该餐包含的菜品
   total: {             // 整餐营养合计（用于硬指标整餐判定）
+    carbsG: number;
     sodiumMg: number;
     cholesterolMg: number;
-    sugarG: number;
   };
 }
 ```
@@ -99,8 +97,8 @@ food-planner/
 
 1. **硬过滤**：菜品的 `allergens` 与用户 `avoid` 交集非空 → 排除。
 2. **组装候选餐**：按用户自选菜数（主食0-2、荤0-3、素0-3、汤0-1）从各分类取菜，拼成候选一餐。
-3. **硬指标整餐判定**：`钠 / 胆固醇 / 糖` 三项，将一餐所有菜的值**合计**后与单餐上限（用户 `limits` 或默认指南）比较；超限的组合排除。
-4. **其他指标逐菜判定**：`总脂肪 / 饱和脂肪 / 碳水` 三项，逐菜与单菜阈值比较；超限的菜排除。
+3. **硬指标整餐判定**：`碳水 / 钠 / 胆固醇` 三项，将一餐所有菜的值**合计**后与单餐上限（用户 `limits` 或默认指南）比较；超限的组合排除。
+4. **其他指标逐菜判定**：`总脂肪` 一项，逐菜与单菜阈值比较；超限的菜排除。
 5. 从合法组合中随机/轮换选出一套推荐（第一版不做复杂算法）。
 
 ## 4. 数据来源
@@ -111,5 +109,5 @@ food-planner/
 ## 5. 默认指南阈值
 
 具体数值在 Phase 4 确定（依据中国居民膳食指南 + 三高膳食建议）。
-- 硬指标（钠/胆固醇/糖）：单餐**合计**上限。
-- 其他指标（总脂肪/饱和脂肪/碳水）：单菜阈值，Phase 3 确定。
+- 硬指标（碳水/钠/胆固醇）：单餐**合计**上限。
+- 其他指标（总脂肪）：单菜阈值，Phase 3 确定。
