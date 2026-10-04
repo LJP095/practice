@@ -8,7 +8,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "validate:data": "tsx scripts/validate-data.ts",
-    "check:profile": "tsx scripts/check-profile.ts"
+    "check:profile": "tsx scripts/check-profile.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "react": "^19.3.0",
@@ -20,6 +21,7 @@
     "@vitejs/plugin-react": "^6.1.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
-    "vite": "^8.3.2"
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
   }
 }

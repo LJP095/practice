@@ -64,3 +64,22 @@ export interface UserProfile {
   limits?: UserLimits
   avoid: string[] // 忌口 / 禁忌关键字
 }
+
+// —— 一餐组合 ——
+
+// 用户自选每类菜数（半荤归入「荤」槽位，见 ARCHITECTURE 规则 2）
+export interface MealCounts {
+  staple: number // 主食 0–2
+  meat: number // 荤 + 半荤 0–3
+  veg: number // 素 0–3
+  soup: number // 汤 0–1
+}
+
+export interface Meal {
+  dishes: Dish[]
+  total: {
+    carbsG: number // 硬指标（血糖）
+    sodiumMg: number // 硬指标（血压）
+    cholesterolMg: number // 硬指标（血脂）
+  }
+}

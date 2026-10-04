@@ -21,3 +21,5 @@
 - 阶段 1 完成：47 种食材 + 33 道家常菜；`npm run validate:data` 与 `npm run build` 均通过；`.gitignore` 加 `!food-planner/src/data/` 修正 data/ 误伤。
 - 阶段 2 开始（个人资料）：`UserProfile` 类型 + 表单 UI + 校验 + localStorage 保存/读取。
 - 阶段 2 完成：`src/domain/profile.ts`（校验）+ `src/storage/profile.ts`（localStorage 存取）+ `src/ui/ProfileForm.tsx`（表单）+ `App.tsx`（已保存概览）；新增 `check:profile` 冒烟脚本；`npm run build` 与 `npm run check:profile` 均通过。
+- 阶段 3 开始（规则引擎）：`Meal` 类型 + 默认阈值常量 + 忌口硬过滤 + 一餐组装 + 硬指标整餐/其他逐菜判定 + 单元测试。半荤归入「荤」槽位（荤+半荤共用菜池）。
+- 阶段 3 完成：`src/domain/limits.ts`（默认阈值 + resolveLimits 用户优先）、`src/domain/rules.ts`（规则引擎纯函数）、`src/data/loadDishes.ts`（数据装载为 Dish[]）；引入 vitest；11 个单测全绿；`build`/`test`/`validate:data`/`check:profile`/`diff --check` 全绿。
