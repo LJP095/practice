@@ -23,3 +23,5 @@
 - 阶段 2 完成：`src/domain/profile.ts`（校验）+ `src/storage/profile.ts`（localStorage 存取）+ `src/ui/ProfileForm.tsx`（表单）+ `App.tsx`（已保存概览）；新增 `check:profile` 冒烟脚本；`npm run build` 与 `npm run check:profile` 均通过。
 - 阶段 3 开始（规则引擎）：`Meal` 类型 + 默认阈值常量 + 忌口硬过滤 + 一餐组装 + 硬指标整餐/其他逐菜判定 + 单元测试。半荤归入「荤」槽位（荤+半荤共用菜池）。
 - 阶段 3 完成：`src/domain/limits.ts`（默认阈值 + resolveLimits 用户优先）、`src/domain/rules.ts`（规则引擎纯函数）、`src/data/loadDishes.ts`（数据装载为 Dish[]）；引入 vitest；11 个单测全绿；`build`/`test`/`validate:data`/`check:profile`/`diff --check` 全绿。
+- 阶段 4 开始（推荐 UI）：自选菜数控件 + 一餐组合展示 + 逐菜营养 + 整餐硬指标合计 + 推荐原因。
+- 阶段 4 完成：`src/ui/Recommendation.tsx`（自选菜数控件 + 一餐展示 + 逐菜营养 + 整餐硬指标 + 推荐原因 + 换一换）、App 集成推荐页；引入 @testing-library/react + jsdom；组件测试 3 个；全套 14 测试全绿。
