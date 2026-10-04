@@ -19,3 +19,5 @@
 - 数据源调研：网络受限，无法从 GitHub 下载《中国食物成分表》开源数据 → 改手工整理约 45 种常用食材子集（数值参考第6版，标注「待逐条核对」）。
 - 字段调整（与产品负责人确认）：第6版一般营养成分无「糖」「饱和脂肪」字段 → 硬指标（整餐）= 碳水/钠/胆固醇，其他（逐菜）= 总脂肪；去掉糖、饱和脂肪。
 - 阶段 1 完成：47 种食材 + 33 道家常菜；`npm run validate:data` 与 `npm run build` 均通过；`.gitignore` 加 `!food-planner/src/data/` 修正 data/ 误伤。
+- 阶段 2 开始（个人资料）：`UserProfile` 类型 + 表单 UI + 校验 + localStorage 保存/读取。
+- 阶段 2 完成：`src/domain/profile.ts`（校验）+ `src/storage/profile.ts`（localStorage 存取）+ `src/ui/ProfileForm.tsx`（表单）+ `App.tsx`（已保存概览）；新增 `check:profile` 冒烟脚本；`npm run build` 与 `npm run check:profile` 均通过。

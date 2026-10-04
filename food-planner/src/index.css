@@ -19,3 +19,92 @@ body {
   margin: 0 auto;
   padding: 2rem 1.25rem;
 }
+
+.subtitle {
+  color: #666;
+  margin-top: -0.25rem;
+}
+
+.profile-form {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.field-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.field-row .field {
+  flex: 1;
+}
+
+.field-note {
+  font-size: 0.85rem;
+  color: #888;
+  margin: -0.25rem 0 0;
+}
+
+.error {
+  color: #c0392b;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #2f7d4f;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #25663f;
+}
+
+.profile-summary {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.profile-summary .ok {
+  color: #2f7d4f;
+  font-weight: 700;
+}
+
+.profile-summary ul {
+  padding-left: 1.2rem;
+}
+
+.hint {
+  color: #999;
+  font-size: 0.9rem;
+}

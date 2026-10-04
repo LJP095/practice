@@ -41,3 +41,26 @@ export interface RawDish {
 export interface Dish extends RawDish {
   perServing: Nutrition
 }
+
+// —— 用户个人资料 ——
+
+export type Sex = 'male' | 'female'
+export type ActivityLevel = 'light' | 'moderate' | 'high'
+
+// 三高指标（可选；留空则用通用指南默认值）
+export interface UserLimits {
+  carbsGPerMeal?: number // 单餐碳水上限（血糖）
+  sodiumMgPerMeal?: number // 单餐钠上限（血压）
+  cholesterolMgPerMeal?: number // 单餐胆固醇上限（血脂）
+  fatGPerDish?: number // 单菜总脂肪阈值（血脂，逐菜）
+}
+
+export interface UserProfile {
+  age: number
+  sex: Sex
+  heightCm: number
+  weightKg: number
+  activity: ActivityLevel
+  limits?: UserLimits
+  avoid: string[] // 忌口 / 禁忌关键字
+}
