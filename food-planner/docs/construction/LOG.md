@@ -25,3 +25,6 @@
 - 阶段 3 完成：`src/domain/limits.ts`（默认阈值 + resolveLimits 用户优先）、`src/domain/rules.ts`（规则引擎纯函数）、`src/data/loadDishes.ts`（数据装载为 Dish[]）；引入 vitest；11 个单测全绿；`build`/`test`/`validate:data`/`check:profile`/`diff --check` 全绿。
 - 阶段 4 开始（推荐 UI）：自选菜数控件 + 一餐组合展示 + 逐菜营养 + 整餐硬指标合计 + 推荐原因。
 - 阶段 4 完成：`src/ui/Recommendation.tsx`（自选菜数控件 + 一餐展示 + 逐菜营养 + 整餐硬指标 + 推荐原因 + 换一换）、App 集成推荐页；引入 @testing-library/react + jsdom；组件测试 3 个；全套 14 测试全绿。
+- 阶段 5 开始（收尾）：建立 lint（eslint）、复跑 build/测试、文档校正、部署说明、提交推送。
+- 阶段 5·lint 尝试失败（保留记录）：`npm i -D eslint typescript-eslint @eslint/js eslint-plugin-react-hooks` 报 ERESOLVE —— typescript-eslint@8 的 peer 依赖要求 `typescript >=4.8.4 <6.1.0`，本项目用 7.0.2（native tsc），无法安装。决策：不 `--force/--legacy-peer-deps` 强制（有破坏风险、也未必能解析 TS7）；静态检查由 `npm run build` 内的 `tsc --noEmit`（strict + noUnusedLocals/Parameters）承担，eslint 记为「未建立」。
+- 阶段 5 完成（收尾）：文档校正（ARCHITECTURE 层状态/目录/阈值、PRD 开放问题、新增 README 部署说明）；`npm run build` / `test`(14) / `validate:data` / `check:profile` / `diff --check` 全绿。第一版六阶段（0–5）全部完成。
