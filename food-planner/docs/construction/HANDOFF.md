@@ -22,13 +22,13 @@
 
 - 食材营养数值与原书核对
 - eslint 建立（typescript-eslint 尚不支持 TS 7.0.2）
-- 开启 GitHub Pages（Settings → Pages → Source=gh-pages；站点已推该分支，本机无 gh CLI 需手动一步）
 
 ## 下一步（1–3 个有界任务）
 
-1. 开启 GitHub Pages：仓库 Settings → Pages → Source=Deploy from a branch → gh-pages /(root)，然后访问 https://ljp095.github.io/practice/
-2. 食材营养数值（47 种，手工参考值）与原书核对
-3. （可选）TS 7 兼容的 lint 方案
+1. 食材营养数值（47 种，手工参考值）与原书核对
+2. （可选）TS 7 兼容的 lint 方案
+
+站点已上线 https://ljp095.github.io/practice/ ，无需再手动开启 Pages。
 
 ## 必读
 
@@ -66,7 +66,7 @@
 
 ## 工作区状态
 
-干净（阈值复核 + 减盐提示 + 部署 base 变更均已提交；gh-pages 分支已推送）。
+干净（已上线 https://ljp095.github.io/practice/ ；`npm run deploy` 一键部署已就绪）。
 
 ## 风险
 

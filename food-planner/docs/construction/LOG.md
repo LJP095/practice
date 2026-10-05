@@ -33,3 +33,4 @@
 - 真机点验通过（2026-10-05）：`npm run dev` 冒烟（标题「稳稳吃」、入口 200）+ 用户浏览器手动点验全流程（资料 / 选菜数 / 推荐 / 换一换 / 减盐提示 / 忌口 / localStorage 持久化）均正常。
 - 部署（2026-10-05）：`vite.config.ts` 加 `base: './'`（相对路径，适配任意子路径）；`dist/` 以孤儿提交推至新分支 `gh-pages`（index.html + assets/ + .nojekyll）。GitHub Pages 需在仓库 Settings 手动开启（本机无 gh CLI）：Source=Deploy from a branch → gh-pages /(root)。预期 URL https://ljp095.github.io/practice/ 。
 - 一键部署脚本（2026-10-05）：新增 `scripts/deploy.mjs` + `npm run deploy`（build → 浅克隆 gh-pages → 清空重建 → 追加提交，不用 `git push --force`）；README 增部署说明。实测 dist 无变化时正确跳过。
+- 上线确认（2026-10-05）：https://ljp095.github.io/practice/ 返回 200，标题「稳稳吃」，JS/CSS 资源均 200，`base: './'` 相对路径在子路径部署下生效。
