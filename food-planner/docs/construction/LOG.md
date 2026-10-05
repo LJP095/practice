@@ -28,3 +28,5 @@
 - 阶段 5 开始（收尾）：建立 lint（eslint）、复跑 build/测试、文档校正、部署说明、提交推送。
 - 阶段 5·lint 尝试失败（保留记录）：`npm i -D eslint typescript-eslint @eslint/js eslint-plugin-react-hooks` 报 ERESOLVE —— typescript-eslint@8 的 peer 依赖要求 `typescript >=4.8.4 <6.1.0`，本项目用 7.0.2（native tsc），无法安装。决策：不 `--force/--legacy-peer-deps` 强制（有破坏风险、也未必能解析 TS7）；静态检查由 `npm run build` 内的 `tsc --noEmit`（strict + noUnusedLocals/Parameters）承担，eslint 记为「未建立」。
 - 阶段 5 完成（收尾）：文档校正（ARCHITECTURE 层状态/目录/阈值、PRD 开放问题、新增 README 部署说明）；`npm run build` / `test`(14) / `validate:data` / `check:profile` / `diff --check` 全绿。第一版六阶段（0–5）全部完成。
+- 阈值复核（产品负责人拍板，2026-10-05）：四项阈值定稿保持现状——碳水90g / 钠1500mg / 胆固醇200mg / 总脂肪20g。钠1500mg 正式标注为「过滤高钠叠加」的宽松值：临床理想约670mg/餐（成人每日盐≤5g≈2000mg钠），但菜谱每菜约1g盐≈393mg钠、1荤1素1主食最低约920mg，过严会无解；缺口交给数据核对。
+- 新增「减盐提示」（软提示，不参与判定）：`limits.ts` 增 `SODIUM_TIP_MG=600`；`rules.ts` 增 `isHighSodium`；`Recommendation.tsx` 在偏咸菜卡与推荐原因标注「偏咸：建议少放盐/酱油」；`rules.test.ts` 增 1 用例。`build` 通过、`test` 15 个全绿。建回滚分支 `backup/food-planner-threshold-review-20261005`（已推送）。

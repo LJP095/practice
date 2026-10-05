@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import type { Dish, MealCounts, Nutrition, UserProfile } from './types'
 import { loadDishes } from '../data/loadDishes'
-import { groupDishes, isAvoided, isFatOk, isMealHardOk, listValidMeals, recommendMeal } from './rules'
-import { DEFAULT_LIMITS, resolveLimits } from './limits'
+import { groupDishes, isAvoided, isFatOk, isHighSodium, isMealHardOk, listValidMeals, recommendMeal } from './rules'
+import { DEFAULT_LIMITS, resolveLimits, SODIUM_TIP_MG } from './limits'
 
 function nut(over: Partial<Nutrition> = {}): Nutrition {
   return { caloriesKcal: 0, carbsG: 0, sodiumMg: 0, fatG: 0, cholesterolMg: 0, ...over }
@@ -47,6 +47,15 @@ describe('其他指标逐菜（总脂肪）', () => {
     expect(isFatOk(makeDish({ perServing: nut({ fatG: 21 }) }), limits)).toBe(false)
     expect(isFatOk(makeDish({ perServing: nut({ fatG: 20 }) }), limits)).toBe(true)
     expect(isFatOk(makeDish({ perServing: nut({ fatG: 5 }) }), limits)).toBe(true)
+  })
+})
+
+describe('减盐提示（软提示，不参与硬判定）', () => {
+  it('单道菜钠 ≥ 阈值则标记偏咸', () => {
+    expect(isHighSodium(makeDish({ perServing: nut({ sodiumMg: SODIUM_TIP_MG }) }))).toBe(true)
+    expect(isHighSodium(makeDish({ perServing: nut({ sodiumMg: 933 }) }))).toBe(true)
+    expect(isHighSodium(makeDish({ perServing: nut({ sodiumMg: SODIUM_TIP_MG - 1 }) }))).toBe(false)
+    expect(isHighSodium(makeDish({ perServing: nut({ sodiumMg: 4 }) }))).toBe(false)
   })
 })
 

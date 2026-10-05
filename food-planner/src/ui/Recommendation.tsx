@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { Meal, MealCounts, UserProfile } from '../domain/types'
 import { loadDishes } from '../data/loadDishes'
-import { isAvoided, isFatOk, recommendMeal } from '../domain/rules'
+import { isAvoided, isFatOk, isHighSodium, recommendMeal } from '../domain/rules'
 import { resolveLimits, type ResolvedLimits } from '../domain/limits'
 
 const ALL_DISHES = loadDishes()
@@ -109,6 +109,7 @@ function Result({
     { label: '钠', value: meal.total.sodiumMg, unit: 'mg', limit: limits.sodiumMgPerMeal },
     { label: '胆固醇', value: meal.total.cholesterolMg, unit: 'mg', limit: limits.cholesterolMgPerMeal },
   ]
+  const saltyDishes = meal.dishes.filter(isHighSodium)
 
   return (
     <>
@@ -123,6 +124,7 @@ function Result({
             <p className="dish-nutrition">
               {d.perServing.caloriesKcal} kcal · 碳水 {d.perServing.carbsG}g · 钠 {d.perServing.sodiumMg}mg · 脂肪 {d.perServing.fatG}g · 胆固醇 {d.perServing.cholesterolMg}mg
             </p>
+            {isHighSodium(d) && <p className="salt-tip">偏咸：做菜时建议少放盐 / 酱油</p>}
           </li>
         ))}
       </ul>
@@ -142,6 +144,8 @@ function Result({
 
       <p className="reason">
         推荐原因：每道菜脂肪未超单菜上限；忌口已过滤 {avoidedCount} 道、脂肪超限已过滤 {fattyCount} 道；整餐三项硬指标均在上限内。
+        {saltyDishes.length > 0 &&
+          `另有 ${saltyDishes.length} 道偏咸（${saltyDishes.map((d) => d.name).join('、')}），建议做菜时少放盐/酱油。`}
       </p>
     </>
   )

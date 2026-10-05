@@ -2,7 +2,7 @@
 // 纯函数，不依赖 UI / 存储 / 数据文件；菜品以 Dish[]（含 perServing）传入。
 
 import type { Dish, Meal, MealCounts, UserProfile } from './types'
-import { resolveLimits, type ResolvedLimits } from './limits'
+import { resolveLimits, SODIUM_TIP_MG, type ResolvedLimits } from './limits'
 import { sumNutrition } from './nutrition'
 
 // —— 分类槽位（半荤归入荤） ——
@@ -37,6 +37,12 @@ export function isAvoided(dish: Dish, avoid: string[]): boolean {
 
 export function isFatOk(dish: Dish, limits: ResolvedLimits): boolean {
   return dish.perServing.fatG <= limits.fatGPerDish
+}
+
+// —— 减盐提示：单道菜钠偏高（软提示，不参与硬判定） ——
+
+export function isHighSodium(dish: Dish): boolean {
+  return dish.perServing.sodiumMg >= SODIUM_TIP_MG
 }
 
 // —— 硬指标整餐判定 ——
