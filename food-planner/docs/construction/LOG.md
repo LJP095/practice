@@ -30,3 +30,5 @@
 - 阶段 5 完成（收尾）：文档校正（ARCHITECTURE 层状态/目录/阈值、PRD 开放问题、新增 README 部署说明）；`npm run build` / `test`(14) / `validate:data` / `check:profile` / `diff --check` 全绿。第一版六阶段（0–5）全部完成。
 - 阈值复核（产品负责人拍板，2026-10-05）：四项阈值定稿保持现状——碳水90g / 钠1500mg / 胆固醇200mg / 总脂肪20g。钠1500mg 正式标注为「过滤高钠叠加」的宽松值：临床理想约670mg/餐（成人每日盐≤5g≈2000mg钠），但菜谱每菜约1g盐≈393mg钠、1荤1素1主食最低约920mg，过严会无解；缺口交给数据核对。
 - 新增「减盐提示」（软提示，不参与判定）：`limits.ts` 增 `SODIUM_TIP_MG=600`；`rules.ts` 增 `isHighSodium`；`Recommendation.tsx` 在偏咸菜卡与推荐原因标注「偏咸：建议少放盐/酱油」；`rules.test.ts` 增 1 用例。`build` 通过、`test` 15 个全绿。建回滚分支 `backup/food-planner-threshold-review-20261005`（已推送）。
+- 真机点验通过（2026-10-05）：`npm run dev` 冒烟（标题「稳稳吃」、入口 200）+ 用户浏览器手动点验全流程（资料 / 选菜数 / 推荐 / 换一换 / 减盐提示 / 忌口 / localStorage 持久化）均正常。
+- 部署（2026-10-05）：`vite.config.ts` 加 `base: './'`（相对路径，适配任意子路径）；`dist/` 以孤儿提交推至新分支 `gh-pages`（index.html + assets/ + .nojekyll）。GitHub Pages 需在仓库 Settings 手动开启（本机无 gh CLI）：Source=Deploy from a branch → gh-pages /(root)。预期 URL https://ljp095.github.io/practice/ 。
