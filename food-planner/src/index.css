@@ -1,0 +1,284 @@
+:root {
+  font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #faf9f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-top: -0.25rem;
+}
+
+.profile-form {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.field-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.field-row .field {
+  flex: 1;
+}
+
+.field-note {
+  font-size: 0.85rem;
+  color: #888;
+  margin: -0.25rem 0 0;
+}
+
+.error {
+  color: #c0392b;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #2f7d4f;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #25663f;
+}
+
+.profile-summary {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.profile-summary .ok {
+  color: #2f7d4f;
+  font-weight: 700;
+}
+
+.profile-summary ul {
+  padding-left: 1.2rem;
+}
+
+.hint {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.rec-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.profile-line {
+  color: #666;
+  margin: 0;
+}
+
+.link-btn {
+  background: none;
+  color: #2f7d4f;
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.link-btn:hover {
+  background: none;
+  color: #25663f;
+}
+
+.counts {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.25rem 0;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+.counter-label {
+  font-weight: 600;
+  min-width: 5.5rem;
+}
+
+.counter button {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border-radius: 50%;
+  background: #eef4f0;
+  color: #2f7d4f;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.counter button:hover {
+  background: #dceadf;
+}
+
+.counter button:disabled {
+  background: #f0f0f0;
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.counter-value {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.rec-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+button.secondary {
+  background: #fff;
+  color: #2f7d4f;
+  border: 1px solid #2f7d4f;
+}
+
+button.secondary:hover {
+  background: #eef4f0;
+}
+
+.dish-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dish-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.dish-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.cat {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2f7d4f;
+  background: #eef4f0;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.dish-note,
+.allergen,
+.dish-nutrition {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.allergen {
+  color: #c0392b;
+}
+
+.meal-total {
+  background: #f4f9f5;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.meal-total h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.meal-total ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.meal-total li {
+  padding: 0.15rem 0;
+}
+
+.ok {
+  color: #2f7d4f;
+  font-weight: 700;
+}
+
+.reason {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.empty {
+  color: #c0392b;
+  background: #fff;
+  border: 1px solid #f0d6d6;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}

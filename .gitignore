@@ -41,6 +41,10 @@ data/
 *.sqlite3
 *.db
 
+# food-planner 源码数据不被上面的 data/ 规则误伤
+!food-planner/src/data/
+!food-planner/src/data/**
+
 # —— 构建与缓存 ——
 .cache/
 coverage/
