@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "validate:data": "tsx scripts/validate-data.ts",
     "check:profile": "tsx scripts/check-profile.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "deploy": "npm run build && node scripts/deploy.mjs"
   },
   "dependencies": {
     "react": "^19.3.0",

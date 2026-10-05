@@ -46,6 +46,7 @@
 - `src/storage/profile.ts`
 - `src/data/loadDishes.ts`、`src/data/dishes.json`、`src/data/ingredients.json`
 - `src/ui/ProfileForm.tsx`、`src/ui/Recommendation.tsx`、`src/App.tsx`
+- `scripts/deploy.mjs`（一键部署 `npm run deploy`）
 
 ## 测试基线
 
